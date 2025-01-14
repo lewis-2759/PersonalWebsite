@@ -8,8 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
             targetSection.scrollIntoView({ behavior: 'smooth' });
         });
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Document is ready');
+    const nav = document.querySelector('nav');
+    const navArrow = document.querySelector('.menu-icon');
+
+    nav.addEventListener('mouseover', () => {
+        nav.style.width = '12.5em'; // 200px
+        navArrow.style.display = 'none';
+    });
+    nav.addEventListener('mouseout', () => {
+        nav.style.width = '3.125em'; // 50px
+        navArrow.style.display = 'block';
+    });
 });

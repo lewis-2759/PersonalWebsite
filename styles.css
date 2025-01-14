@@ -2,7 +2,10 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(to bottom right, #e0e0e0, #f4f4f4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
@@ -10,11 +13,11 @@ header {
     color: white;
     padding: 4rem 0;
     text-align: center;
-    position: relative;
+    width: 100%;
 }
 
 .header-content {
-    max-width: 800px;
+    max-width: 50em;
     margin: 0 auto;
 }
 
@@ -28,36 +31,86 @@ header p {
     margin: 0.5rem 0 0;
 }
 
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 3.125em; /* 50px */
+    background-color: #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: width 0.3s;
+    overflow: hidden;
+}
+
+nav:hover {
+    width: 12.5em; /* 200px */
+}
+
+nav .menu-icon {
+    position: absolute;
+    left: -1.25em; /* -20px */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #444;
+    color: white;
+    padding: 0.3125em; /* 5px */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: left 0.3s;
+}
+
+nav:hover .menu-icon {
+    display: none;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
-    text-align: center;
-    background-color: #444;
     margin: 0;
+    width: 100%;
+    text-align: left;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 1rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     padding: 1rem;
-    display: inline-block;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
 }
 
-nav ul li a:hover {
-    background-color: #555;
+nav ul li a span {
+    display: none;
+}
+
+nav:hover ul li a span {
+    display: inline;
+}
+
+nav ul li .icon {
+    margin-right: 0.5rem;
 }
 
 section {
     padding: 2rem;
     margin: 1rem 0;
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5em; /* 8px */
+    box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1); /* 10px */
+    width: 80%;
+    max-width: 62.5em; /* 1000px */
 }
 
 footer {
@@ -65,7 +118,5 @@ footer {
     padding: 0.65rem 0; /* Reduced by 35% from 1rem */
     background-color: #333;
     color: white;
-    position: fixed;
     width: 100%;
-    bottom: 0;
 }
