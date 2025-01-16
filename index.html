@@ -9,37 +9,48 @@
 <body>
     <header>
         <div class="header-content">
-            <h1>My Portfolio</h1>
-            <p>Welcome to my personal portfolio website</p>
+            <h1>Hello, I'm Andrew.</h1>
+            <p>I'm a software developer.</p>
+            <a href="#about" class="view-work-button">View My Work</a>
         </div>
     </header>
-    <nav>
-        <span class="menu-icon">☰</span>
+    <nav id="navbar">
         <ul>
-            <li><a href="#about"><span class="icon">👤</span><span>About Me</span></a></li>
-            <li><a href="#resume"><span class="icon">📄</span><span>Resume</span></a></li>
-            <li><a href="#projects"><span class="icon">💼</span><span>Projects</span></a></li>
-            <li><a href="#contact"><span class="icon">✉️</span><span>Contact</span></a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+    <div class="separator" id="home"></div>
     <section id="about">
-        <h2>About Me</h2>
-        <p>This is the about me section where you can introduce yourself.</p>
-    </section>
-    <section id="resume">
-        <h2>Resume</h2>
-        <img src="currentresume.jpg" alt="Resume" width="100%" />
+        <h2>About</h2>
+        <p>This is the about section where you can introduce yourself.</p>
     </section>
     <section id="projects">
         <h2>Projects</h2>
-        <p>This is the projects section where you can showcase your work.</p>
+        <div class="project-grid">
+            <div class="project-video">
+                <iframe src="https://www.youtube.com/embed/vXLAREKtcTA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="project-description">
+                <ul>
+                    <li>Project Title: Example Project</li>
+                    <li>Technologies Used: HTML, CSS, JavaScript</li>
+                    <li>Project Duration: 3 months</li>
+                    <li>Role: Frontend Developer</li>
+                    <li>Features: Responsive design, interactive UI</li>
+                </ul>
+            </div>
+        </div>
     </section>
     <section id="contact">
         <h2>Contact</h2>
-        <p>This is the contact section where you can provide your contact information.</p>
+        <p>You can download my resume <a href="currentresume.pdf" target="_blank">here</a>.</p>
+        <p>Feel free to reach out to me at <a href="mailto:your-email@example.com">here</a>.</p>
     </section>
     <footer>
-        <p>&copy; 2023 My Portfolio</p>
+        <p>&copy; 2025 Andrew Lewis</p>
     </footer>
     <script src="script.js"></script>
 </body>

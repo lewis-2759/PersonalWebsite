@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('nav ul li a');
+    const links = document.querySelectorAll('nav ul li a, .view-work-button');
     links.forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
@@ -9,15 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const nav = document.querySelector('nav');
-    const navArrow = document.querySelector('.menu-icon');
+    const navbar = document.getElementById('navbar');
+    const sticky = navbar.offsetTop;
 
-    nav.addEventListener('mouseover', () => {
-        nav.style.width = '12.5em'; // 200px
-        navArrow.style.display = 'none';
-    });
-    nav.addEventListener('mouseout', () => {
-        nav.style.width = '3.125em'; // 50px
-        navArrow.style.display = 'block';
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add('sticky');
+        } else {
+            navbar.classList.remove('sticky');
+        }
     });
 });
