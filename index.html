@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header id="home">
         <div class="header-content">
             <h1>Hello, I'm Andrew.</h1>
             <p>I'm a software developer.</p>
@@ -22,10 +22,20 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <div class="separator" id="home"></div>
+    <div class="separator"></div>
     <section id="about">
         <h2>About</h2>
-        <p>This is the about section where you can introduce yourself.</p>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Hello! I am a passionate computer science student at The Ohio State University, expected to graduate in December 2025.
+                I have worked with many languages, frameworks, and tools to develop with and I am always looking to learn more.
+                I am currently seeking an internship for the summer of 2025 to further my skillset and gain valuable experience in the field.
+                I have worked in multiple group projects, where I excelled in taking a leadership role and guided my team to success.</p>
+            </div>
+            <div class="about-image">
+                <img src="headshot.jpg" alt="Headshot of Andrew" />
+            </div>
+        </div>
     </section>
     <section id="projects">
         <h2>Projects</h2>
@@ -34,20 +44,30 @@
                 <iframe src="https://www.youtube.com/embed/vXLAREKtcTA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="project-description">
+                <h3>Presentation Feedback Full-Stack Web Application</h3>
                 <ul>
-                    <li>Project Title: Example Project</li>
-                    <li>Technologies Used: HTML, CSS, JavaScript</li>
-                    <li>Project Duration: 3 months</li>
-                    <li>Role: Frontend Developer</li>
-                    <li>Features: Responsive design, interactive UI</li>
+                    <li>Developed a full-stack web application using Ruby on Rails for backend, with JavaScript, HTML, and CSS for a
+                    responsive, user-friendly design</li>
+                    <li>Provided a platform for presenters to upload presentations and invite attendees to review, offering in-depth
+                    feedback to presenters</li>
+                    <li>Implemented RESTful APIs to handle user authentication, sessions, data storage, and real-time interactions between
+                    presenters and their audience</li>
+                    <li>Took on a leadership role in facilitating team collaboration and meeting deadlines</li>
                 </ul>
             </div>
         </div>
     </section>
     <section id="contact">
         <h2>Contact</h2>
-        <p>You can download my resume <a href="currentresume.pdf" target="_blank">here</a>.</p>
-        <p>Feel free to reach out to me at <a href="mailto:your-email@example.com">here</a>.</p>
+        <div class="contact-grid">
+            <div class="resume-image">
+                <img src="currentresume.jpg" alt="Resume" />
+            </div>
+            <div class="contact-info">
+                <a href="currentresume.pdf" target="_blank" class="contact-box">Download My Resume</a>
+                <a href="mailto:your-email@example.com" class="contact-box">Reach My Email</a>
+            </div>
+        </div>
     </section>
     <footer>
         <p>&copy; 2025 Andrew Lewis</p>

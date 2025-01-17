@@ -18,6 +18,8 @@ header, section {
     align-items: center;
     position: relative;
     overflow: hidden;
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
 header {
@@ -26,7 +28,7 @@ header {
 }
 
 .header-content {
-    max-width: 50em;
+    max-width: 90%;
     margin: 0 auto;
     text-align: center;
     z-index: 1;
@@ -39,7 +41,7 @@ header h1 {
 }
 
 header p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 0.5rem 0 0;
     color: #cfcfcf; /* Light text */
 }
@@ -81,10 +83,10 @@ header:hover::before {
 nav {
     width: 100%;
     background-color: #20232a; /* Darker background for nav */
-    padding: 2rem 0;
-    font-size: 1.5rem;
+    padding: 2rem 0; /* Increased padding for larger nav bar */
     text-align: center;
     position: relative;
+    box-sizing: border-box;
 }
 
 nav.sticky {
@@ -100,7 +102,8 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem; /* Increased gap between nav items */
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -110,7 +113,8 @@ nav ul li {
 nav ul li a {
     color: #cfcfcf; /* Light text */
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 1rem 2rem; /* Increased padding for nav items */
+    font-size: 1.5rem; /* Increased font size for nav items */
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -120,7 +124,7 @@ nav ul li a:hover {
 }
 
 .separator {
-    height: 2rem;
+    height: 1rem; /* Reduced height for less space */
     width: 100%;
     background-color: #282c34; /* Darker background for sections */
 }
@@ -130,10 +134,44 @@ section {
     border-radius: 0; /* Remove border radius for seamless transition */
     box-shadow: none; /* Remove shadow for seamless transition */
     padding: 2rem;
+    box-sizing: border-box;
 }
 
 section p {
     line-height: 1.6; /* Increased line spacing */
+}
+
+section h2 {
+    font-size: 2.4rem; /* Increased font size for section headers */
+    margin-bottom: 5rem;
+}
+
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 2rem; /* Gap between columns */
+    width: 100%;
+    align-items: center; /* Center items vertically */
+}
+
+.about-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1.6em; /* Reduced by 20% */
+    padding-right: 2.4em; /* Reduced by 20% */
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 70%; /* Adjust the size of the image */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .project-grid {
@@ -151,10 +189,16 @@ section p {
     width: auto;
     justify-content: center; /* Center video horizontally */
 }
-
 .project-video iframe {
-    width: 90%; /* Increase video width */
-    height: 90%; /* Increase video height */
+    width: 100%; /* Ensure video fits within the grid */
+    height: 100%; /* Maintain aspect ratio */
+}
+
+
+.project-description h3 {
+    font-size: 1.75rem; /* Font size for project description title */
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 .project-description ul {
@@ -163,10 +207,89 @@ section p {
     line-height: 2; /* Increased line spacing for list items */
 }
 
+.project-description ul li {
+    margin-bottom: 1rem; /* Add space between list items */
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 2rem; /* Gap between columns */
+    width: 100%;
+    align-items: center; /* Center items vertically */
+}
+
+.resume-image {
+    display: flex;
+    justify-content: center; /* Center image horizontally */
+}
+
+.resume-image img {
+    width: 58%; /* Make image take up 70% of the left side grid */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Increased gap between contact boxes */
+}
+
+.contact-box {
+    display: block;
+    padding: 1rem;
+    background-color: #61dafb; /* Light blue background */
+    color: #1e1e1e; /* Dark text */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, color 0.3s;
+    width: 50%; /* Make bars half as long */
+    margin: 0 auto; /* Center the bars */
+}
+
+.contact-box:hover {
+    background-color: #21a1f1; /* Darker blue background */
+    color: #ffffff; /* White text */
+}
+
+.email-icon {
+    width: 32px; /* Adjust the size of the email icon */
+    height: 32px;
+    vertical-align: middle; /* Align the icon with the text */
+}
+
 footer {
     text-align: center;
     padding: 0.65rem 0; /* Reduced by 35% from 1rem */
     background-color: #20232a; /* Darker background for footer */
     color: #cfcfcf; /* Light text */
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .project-grid, .contact-grid {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+
+    .resume-image img {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .contact-box {
+        width: 80%; /* Wider bars for smaller screens */
+    }
 }
