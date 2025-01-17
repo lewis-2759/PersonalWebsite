@@ -5,7 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+            const headerOffset = document.querySelector('nav').offsetHeight
+            const elementPosition = targetSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
         });
     });
 
