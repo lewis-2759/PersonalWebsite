@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
-            const headerOffset = document.querySelector('nav').offsetHeight
+            const headerOffset = 30;
             const elementPosition = targetSection.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
             window.scrollTo({
                 top: offsetPosition,
@@ -18,12 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const navbar = document.getElementById('navbar');
     const sticky = navbar.offsetTop;
+    const navbarPlaceholder = document.createElement('div');
+    navbarPlaceholder.style.height = `${navbar.offsetHeight}px`;
+    navbar.parentNode.insertBefore(navbarPlaceholder, navbar);
 
     window.addEventListener('scroll', () => {
-        if (window.pageYOffset >= sticky) {
+        if (window.scrollY >= sticky) {
             navbar.classList.add('sticky');
+            navbarPlaceholder.style.display = 'block';
         } else {
             navbar.classList.remove('sticky');
+            navbarPlaceholder.style.display = 'none';
         }
     });
 });
