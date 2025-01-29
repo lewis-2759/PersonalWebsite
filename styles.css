@@ -338,8 +338,7 @@ footer {
         justify-content: center; /* Center video horizontally */
     }
     nav ul li a {
-        font-size: 1.2rem;
-        padding: 0.5rem 1rem;
+        font-size: 1rem;
     }
 
     .project-grid, .contact-grid {
@@ -360,5 +359,8 @@ footer {
 
     .about-image, .about-text {
         width: 100%; /* Full width for smaller screens */
+    }
+    .section{
+        height: auto;
     }
 }
